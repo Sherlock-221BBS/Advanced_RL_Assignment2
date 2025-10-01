@@ -20,6 +20,7 @@ Assignment Files (Provided):
 ├── pettingzoo_pong_wrapper.py     # PettingZoo Pong environment wrapper
 ├── student_agent.py               # Agent template (implement this)
 ├── train_baseline_agent.py        # Reference training script (study this)
+├── validate_student_submission.py # Validation script (use this)
 └── README.md                      # This instruction file
 ```
 
@@ -87,7 +88,7 @@ Each agent can take 6 actions (Atari Pong controls):
 - -1: Concede a point (miss the ball)
 - 0: Otherwise
 
-## Tournament System
+## 🏆 Tournament System
 
 ### Round-Robin Format
 - Each agent plays against every other agent
@@ -187,7 +188,21 @@ You need to process RGB images (210, 160, 3). Consider using:
 - Fully connected layers for action values
 - Any architecture that works with RGB input
 
+## Testing Your Implementation
 
+### Validate Your Submission
+
+Before submitting, use the validation script to check your implementation:
+
+```bash
+python validate_student_submission.py ./your_entry_number_ail821_assignment2
+```
+
+This script checks:
+- All required files are present
+- StudentAgent class is properly implemented
+- Model file is valid
+- Agent can select actions correctly
 
 ### Test with Reference Training Script
 
@@ -197,7 +212,7 @@ Study train_baseline_agent.py to understand:
 - How to use the agent interface
 - How to save and load models
 
-### Test Your Agent
+### Test Your Agent Manually
 
 ```python
 # Test your agent with the environment
@@ -237,6 +252,11 @@ env.close()
 2. 6-Action Space
    - Actions 0-5 correspond to Atari Pong controls
    - Make sure your agent outputs valid actions (0-5)
+
+3. Training Stability
+   - Use appropriate learning rates for CNN training
+   - Consider experience replay for stable learning
+   - Monitor training progress and loss values
 
 ## Expected Performance
 
